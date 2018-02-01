@@ -11,16 +11,16 @@ import android.widget.ListView
 import android.widget.Toast
 
 import androideduio.com.listsample.R
-import androideduio.com.listsample.adapter.StudentListAdapter
+import androideduio.com.listsample.adapter.StudentListListViewAdapter
 import androideduio.com.listsample.util.AppUtil
 
-class ListViewFragment : Fragment(), AdapterView.OnItemClickListener {
+class ListViewFragment : Fragment(), AdapterView.OnItemClickListener{
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val masterView = inflater!!.inflate(R.layout.fragment_list_view, container, false)
         val listView = masterView.findViewById<ListView>(R.id.fragment_list_view_student)
-        val studentListAdapter = StudentListAdapter(AppUtil.getStudentList())
+        val studentListAdapter = StudentListListViewAdapter(AppUtil.getStudentList())
         listView.adapter = studentListAdapter
         listView.onItemClickListener = this
 
